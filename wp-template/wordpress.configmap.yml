@@ -37,8 +37,9 @@ data:
   WORDPRESS_CONFIG_EXTRA: |
     define( 'WP_AUTO_UPDATE_CORE', true );
     define( 'DISALLOW_FILE_EDIT', true );
+    # aktifkan DISALLOW_FILE_MODS jika ingin install plugin true false
     define( 'DISALLOW_FILE_MODS', true );
-
+    
     define( 'S3_UPLOADS_BUCKET', 'wordpress' );
     define( 'S3_UPLOADS_REGION', 'world' );
     define( 'S3_UPLOADS_KEY', 'uSFl4DdmFZEd1r32pKaw' );

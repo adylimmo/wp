@@ -34,7 +34,8 @@ spec:
 
       containers:
       - name: wordpress
-        image: wordpress:6.5.5-fpm
+        # image: wordpress:6.5.5-fpm
+        image: wordpress:6.7.1-fpm
         resources:
           requests:
             cpu: 100m
