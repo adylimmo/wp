@@ -11,5 +11,5 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: nfs-storage-minio
   nfs:
-    path: /srv/nfs/minio
-    server: 10.0.0.4
+    path: /data-k8s/minio
+    server: 10.128.0.23

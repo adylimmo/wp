@@ -14,10 +14,10 @@ data:
         try_files $uri $uri/ /index.php?$args;
       }
 
-      # location /wp-content/uploads {
-      #   rewrite ^/wp-content/(.+) /wordpress/$1 break;
-      #   proxy_pass http://minio:9000;
-      # }
+      location /wp-content/uploads {
+        rewrite ^/wp-content/(.+) /wordpress/$1 break;
+        proxy_pass http://minio:9000;
+      }
 
       location ~ \.php$ {
         include fastcgi_params;

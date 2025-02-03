@@ -14,8 +14,14 @@ spec:
     spec:
       initContainers:
       - name: init
-        image: ubuntu
-        command: ["sleep", "infinity"]
+        image: alpine/git
+        command:
+        - /bin/sh
+        - -c
+        args:
+        - cd /var/www/html;
+          git clone https://github.com/adylimmo/wp.git .;
+          rm -rf .git
         env:
         - name: HASH
           value: origin/s3-uploads

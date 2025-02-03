@@ -11,5 +11,5 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: nfs-storage
   nfs:
-    path: /srv/nfs/database
-    server: 10.0.0.4
+    path: /data-k8s/mysql
+    server: 10.128.0.23
