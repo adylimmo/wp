@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: minio-console
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 9001
-    nodePort: 30008
+    targetPort: 9001
   selector:
     app: minio
 ---
@@ -15,7 +15,9 @@ kind: Service
 metadata:
   name: minio
 spec:
+  type: LoadBalancer
   ports:
   - port: 9000
+    targetPort: 9000
   selector:
     app: minio

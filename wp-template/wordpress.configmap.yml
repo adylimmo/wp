@@ -41,5 +41,5 @@ data:
 
     define( 'S3_UPLOADS_BUCKET', 'wordpress' );
     define( 'S3_UPLOADS_REGION', 'world' );
-    define( 'S3_UPLOADS_KEY', 'BgnsaVRr4WJlzGHq80xz' );
-    define( 'S3_UPLOADS_SECRET', 'L8QHRenq2iFN0msOEIVfOiC1hxLepuSq4YrG3uVU' );
+    define( 'S3_UPLOADS_KEY', 'uSFl4DdmFZEd1r32pKaw' );
+    define( 'S3_UPLOADS_SECRET', 'ytjosd56iySCBiyhs9QoPNHIbEAwdaeotMQuFiUR' );

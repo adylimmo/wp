@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: wordpress
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 80
-    nodePort: 30007
+    targetPort: 80
   selector:
     app: wordpress
