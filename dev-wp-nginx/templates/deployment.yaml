@@ -31,24 +31,24 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       initContainers:
-      - name: init
-        image: alpine/git
-        command:
-        - /bin/sh
-        - -c
-        args:
-        # - cd /var/www/html;
-        #   git clone https://github.com/adylimmo/wp.git .;
-        #   rm -rf .git
-        - cd /var/www/html;
-          git config --global --add safe.directory /var/www/html;
-          git clone https://github.com/adylimmo/wp.git .;
-          git pull
-        volumeMounts:
-        # - name: www-data
-        #   mountPath: /var/www/html
-        - name: wordpress-storage
-          mountPath: /var/www/html
+      # - name: init
+      #   image: alpine/git
+      #   command:
+      #   - /bin/sh
+      #   - -c
+      #   args:
+      #   # - cd /var/www/html;
+      #   #   git clone https://github.com/adylimmo/wp.git .;
+      #   #   rm -rf .git
+      #   - cd /var/www/html;
+      #     git config --global --add safe.directory /var/www/html;
+      #     git clone https://github.com/adylimmo/wp.git .;
+      #     git pull
+      #   volumeMounts:
+      #   # - name: www-data
+      #   #   mountPath: /var/www/html
+      #   - name: wordpress-storage
+      #     mountPath: /var/www/html
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
