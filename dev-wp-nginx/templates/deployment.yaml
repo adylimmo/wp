@@ -37,12 +37,13 @@ spec:
         - /bin/sh
         - -c
         args:
+        # - cd /var/www/html;
+        #   git clone https://github.com/adylimmo/wp.git .;
+        #   rm -rf .git
         - cd /var/www/html;
+          git config --global --add safe.directory /var/www/html;
           git clone https://github.com/adylimmo/wp.git .;
-          rm -rf .git
-        env:
-        - name: HASH
-          value: origin/s3-uploads
+          git pull
         volumeMounts:
         # - name: www-data
         #   mountPath: /var/www/html
