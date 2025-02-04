@@ -13,6 +13,10 @@ data:
       location / {
         try_files $uri $uri/ /index.php?$args;
       }
+      # untuk generate certbot
+      location /.well-known/acme-challenge/ {
+        root /var/www/html;
+      }
 
       location /wp-content/uploads {
         rewrite ^/wp-content/(.+) /wordpress/$1 break;

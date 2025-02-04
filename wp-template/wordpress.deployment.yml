@@ -26,7 +26,9 @@ spec:
         - name: HASH
           value: origin/s3-uploads
         volumeMounts:
-        - name: www-data
+        # - name: www-data
+        #   mountPath: /var/www/html
+        - name: wordpress-storage
           mountPath: /var/www/html
         - name: wordpress-dotssh
           mountPath: /root/.ssh/
@@ -46,7 +48,9 @@ spec:
         ports:
         - containerPort: 9000
         volumeMounts:
-        - name: www-data
+        # - name: www-data
+        #   mountPath: /var/www/html
+        - name: wordpress-storage
           mountPath: /var/www/html
         envFrom:
         - secretRef:
@@ -66,9 +70,10 @@ spec:
         ports:
         - containerPort: 80
         volumeMounts:
-        - name: www-data
+        # - name: www-data
+        #   mountPath: /var/www/html
+        - name: wordpress-storage
           mountPath: /var/www/html
-          readOnly: true
         - name: nginx
           mountPath: /etc/nginx/conf.d
           readOnly: true
@@ -83,3 +88,6 @@ spec:
       - name: nginx
         configMap:
           name: wordpress-nginx
+      - name: wordpress-storage
+        persistentVolumeClaim:
+          claimName: wordpress-pvc
